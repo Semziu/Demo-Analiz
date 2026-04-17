@@ -1,5 +1,8 @@
 name: Build And Release Demo Analiz
 
+permissions:
+  contents: write
+
 on:
   push:
     tags:
@@ -26,12 +29,11 @@ jobs:
 
       - name: Build exe
         run: |
-          python -m PyInstaller --noconfirm --clean --onefile --windowed --name DemoAnaliz --hidden-import polars --collect-all polars Test.py
+          python -m PyInstaller --noconfirm --clean --onefile --windowed --uac-admin --name DemoAnaliz --hidden-import polars --collect-all polars Test.py
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v2
         with:
           files: dist/DemoAnaliz.exe
-          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
