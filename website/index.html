@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Analiz</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CS2 Demo Coach</p>
+        <h1>Demo Analiz</h1>
+        <p class="lead">
+          Pobierz program do analizy dem, porownan graczy i bety Live Coach.
+          Strona jest przygotowana tak, zeby latwo udostepniac program, a aktualizacje szly przez GitHub Releases.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="./downloads/DemoAnaliz.exe">Pobierz .exe</a>
+          <a class="button secondary" href="../GITHUB_RELEASES_SETUP.md">Setup GitHub Releases</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-label">Aktualna wersja</div>
+        <div class="version-row">
+          <span id="version-text">1.5.0</span>
+          <span class="badge">Windows</span>
+        </div>
+        <p id="notes-text">
+          Program potrafi teraz sprawdzac najnowszy GitHub Release i pobierac aktualizacje bez recznego linkowania pliku .exe.
+        </p>
+      </div>
+    </header>
+
+    <main class="content-grid">
+      <section class="panel">
+        <h2>Co potrafi program</h2>
+        <ul class="feature-list">
+          <li>Analiza pojedynczego dema i serii kilku dem</li>
+          <li>Biblioteka dem trzymana lokalnie w programie</li>
+          <li>Porownanie Twojego dema z demem lepszego gracza</li>
+          <li>Beta Live Coach z historia sesji</li>
+          <li>System auto-aktualizacji przez <code>GitHub Releases</code></li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Jak wrzucac aktualizacje</h2>
+        <ol class="steps">
+          <li>Zmien numer <code>APP_VERSION</code> w programie.</li>
+          <li>Wypchnij zmiany do repozytorium GitHub.</li>
+          <li>Utworz tag w stylu <code>v1.5.1</code>.</li>
+          <li>GitHub Actions zbuduje nowe <code>.exe</code> i wrzuci je do Releases.</li>
+        </ol>
+      </section>
+
+      <section class="panel wide">
+        <h2>Pliki do publikacji</h2>
+        <div class="file-grid">
+          <div class="file-card">
+            <div class="file-title">index.html</div>
+            <p>Glowne miejsce do pobierania programu.</p>
+          </div>
+          <div class="file-card">
+            <div class="file-title">.github/workflows/release.yml</div>
+            <p>Workflow budujacy .exe i wrzucajacy je do GitHub Releases.</p>
+          </div>
+          <div class="file-card">
+            <div class="file-title">downloads/DemoAnaliz.exe</div>
+            <p>Opcjonalny mirror do pobierania ze strony.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel wide">
+        <h2>Ostatnie zmiany</h2>
+        <div id="changelog" class="changelog">
+          <div class="changelog-item">
+            <div class="change-version">1.5.0</div>
+            <p>Dodany updater pod GitHub Releases, workflow publikacji i prostszy setup nowych wydań.</p>
+          </div>
+          <div class="changelog-item">
+            <div class="change-version">1.4.x</div>
+            <p>Poprawiony Live Coach: mocniejsze filtrowanie, mniej spamu i usuwanie analiz z historii.</p>
+          </div>
+          <div class="changelog-item">
+            <div class="change-version">1.3.x</div>
+            <p>Porownanie 2 dem, biblioteka dem i lepszy interfejs z motywami.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
